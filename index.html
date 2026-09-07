@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nanders Consulting | IT Consulting & Managed Services</title>
+
+    <meta name="description"
+          content="Nanders Consulting provides IT consulting, managed services, cybersecurity, Microsoft 365, infrastructure, and technology projects for growing businesses.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        :root {
+            --navy: #071a35;
+            --navy-light: #0d2749;
+            --blue: #1677ff;
+            --blue-light: #4b9aff;
+            --white: #ffffff;
+            --off-white: #f5f8fc;
+            --gray: #64748b;
+            --dark-gray: #1e293b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--dark-gray);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226,232,240,.7);
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-size: 19px;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--blue), #0b3d91);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 800;
+            font-size: 21px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            transition: .2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-button {
+            background: var(--blue);
+            color: white !important;
+            padding: 12px 20px;
+            border-radius: 7px;
+            font-weight: 600;
+        }
+
+        .nav-button:hover {
+            background: #0b63da;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: 760px;
+            padding-top: 78px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 25%, rgba(22,119,255,.28), transparent 35%),
+                linear-gradient(120deg, #06172d, #0a2342 55%, #06172d);
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .18;
+            background-image:
+                linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            color: #67aaff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 78px);
+            line-height: 1.03;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--blue-light);
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 38px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 24px;
+            border-radius: 7px;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #0d68e6;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.3);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.08);
+        }
+
+
+        /* =========================================
+           SERVICE BAR
+        ========================================= */
+
+        .service-bar {
+            background: #081d37;
+            border-top: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .service-item {
+            padding: 25px 18px;
+            color: #dbeafe;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            border-right: 1px solid rgba(255,255,255,.08);
+        }
+
+        .service-item:last-child {
+            border-right: none;
+        }
+
+
+        /* =========================================
+           SECTION HEADERS
+        ========================================= */
+
+        .section-label {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: var(--gray);
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           SERVICES
+        ========================================= */
+
+        .services {
+            background: var(--white);
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 55px;
+            gap: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: .25s ease;
+            background: white;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #b9d5ff;
+            box-shadow: 0 15px 40px rgba(15, 40, 80, .08);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #eaf3ff;
+            color: var(--blue);
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .service-card ul {
+            margin-top: 18px;
+            list-style: none;
+        }
+
+        .service-card li {
+            font-size: 13px;
+            color: #475569;
+            margin: 8px 0;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            color: var(--blue);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+
+        /* =========================================
+           WHY NANDERS
+        ========================================= */
+
+        .why {
+            background: var(--off-white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-image {
+            min-height: 480px;
+            border-radius: 16px;
+            background:
+                radial-gradient(circle at 70% 30%, rgba(22,119,255,.35), transparent 30%),
+                linear-gradient(145deg, #06172d, #0d315b);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-lines {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(35deg, transparent 48%, rgba(255,255,255,.08) 49%, transparent 50%),
+                linear-gradient(-35deg, transparent 48%, rgba(255,255,255,.08) 49%, transparent 50%);
+            background-size: 90px 90px;
+        }
+
+        .why-list {
+            margin-top: 35px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 26px;
+        }
+
+        .check {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #dcecff;
+            color: var(--blue);
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+        }
+
+        .why-item h4 {
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .why-item p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           APPROACH
+        ========================================= */
+
+        .approach {
+            background: var(--navy);
+            color: white;
+        }
+
+        .approach .section-title {
+            color: white;
+        }
+
+        .approach .section-description {
+            color: #aebed2;
+        }
+
+        .approach-grid {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .approach-card {
+            border: 1px solid rgba(255,255,255,.1);
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255,255,255,.03);
+        }
+
+        .number {
+            color: #4b9aff;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .approach-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .approach-card p {
+            color: #aebed2;
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           TECHNOLOGIES
+        ========================================= */
+
+        .technology {
+            text-align: center;
+        }
+
+        .technology .section-description {
+            margin: auto;
+        }
+
+        .tech-grid {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .tech {
+            border: 1px solid var(--border);
+            padding: 25px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #334155;
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .cta {
+            background:
+                radial-gradient(circle at 80% 50%, rgba(22,119,255,.35), transparent 35%),
+                var(--blue);
+            color: white;
+            padding: 90px 0;
+        }
+
+        .cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cta h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #dcecff;
+            max-width: 600px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            background: var(--off-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            margin-top: 35px;
+        }
+
+        .contact-detail {
+            margin-bottom: 18px;
+        }
+
+        .contact-detail strong {
+            display: block;
+            color: var(--navy);
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .contact-detail span {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--blue);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #041225;
+            color: #94a3b8;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-description {
+            max-width: 350px;
+            font-size: 14px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 9px 0;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-item {
+                border-bottom: 1px solid rgba(255,255,255,.08);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .hero {
+                min-height: 680px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .service-grid,
+            .services-grid,
+            .approach-grid,
+            .tech-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-header {
+                display: block;
+            }
+
+            .why-image {
+                min-height: 320px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="#" class="logo">
+
+            <div class="logo-mark">
+                N
+            </div>
+
+            NANDERS
+            <span>CONSULTING</span>
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#approach">Our Approach</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-button">
+                Get Started →
+            </a>
+
+        </nav>
+
+
+        <div class="mobile-menu" id="mobileMenu">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                IT CONSULTING &nbsp;|&nbsp; MANAGED SERVICES &nbsp;|&nbsp; TECHNOLOGY PROJECTS
+            </div>
+
+            <h1>
+                Enterprise IT expertise for
+                <span>growing businesses.</span>
+            </h1>
+
+            <p>
+                We help organizations build, secure, and manage their
+                technology environment — from Microsoft 365 and Entra
+                to endpoints, infrastructure, cybersecurity, and IT strategy.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Schedule a Consultation →
+                </a>
+
+                <a href="#services" class="btn btn-outline">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICE BAR
+========================================= -->
+
+<section class="service-bar">
+
+    <div class="service-grid">
+
+        <div class="service-item">
+            Microsoft 365 & Entra
+        </div>
+
+        <div class="service-item">
+            Cybersecurity & Compliance
+        </div>
+
+        <div class="service-item">
+            Infrastructure & Cloud
+        </div>
+
+        <div class="service-item">
+            Endpoints & Devices
+        </div>
+
+        <div class="service-item">
+            IT Strategy & Advisory
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="services-header">
+
+            <div>
+
+                <div class="section-label">
+                    WHAT WE DO
+                </div>
+
+                <h2 class="section-title">
+                    Technology that works<br>
+                    for your business.
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Practical IT solutions designed around your business,
+                your users, and your goals.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ☁
+                </div>
+
+                <h3>
+                    Microsoft 365 & Cloud
+                </h3>
+
+                <p>
+                    Build a secure, productive Microsoft environment
+                    that scales with your organization.
+                </p>
+
+                <ul>
+                    <li>Microsoft 365</li>
+                    <li>Entra ID</li>
+                    <li>Azure</li>
+                    <li>SharePoint & Teams</li>
+                </ul>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Managed IT Services
+                </h3>
+
+                <p>
+                    Proactive technology management and support
+                    without the cost of building a large internal IT team.
+                </p>
+
+                <ul>
+                    <li>Help Desk & Support</li>
+                    <li>Endpoint Management</li>
+                    <li>Monitoring & Maintenance</li>
+                    <li>IT Operations</li>
+                </ul>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Infrastructure
+                </h3>
+
+                <p>
+                    Modernize servers, networks, devices, and
+                    infrastructure for reliability and growth.
+                </p>
+
+                <ul>
+                    <li>Windows Server</li>
+                    <li>Network Infrastructure</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Infrastructure Upgrades</li>
+                </ul>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Cybersecurity
+                </h3>
+
+                <p>
+                    Strengthen your organization's security posture
+                    and reduce technology risk.
+                </p>
+
+                <ul>
+                    <li>Identity & Access</li>
+                    <li>MFA & Conditional Access</li>
+                    <li>Endpoint Security</li>
+                    <li>Security Assessments</li>
+                </ul>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⇄
+                </div>
+
+                <h3>
+                    Technology Projects
+                </h3>
+
+                <p>
+                    Expert project delivery for migrations,
+                    upgrades, deployments, and technology transformations.
+                </p>
+
+                <ul>
+                    <li>Server Upgrades</li>
+                    <li>Microsoft 365 Migrations</li>
+                    <li>Cloud Migrations</li>
+                    <li>Technology Deployments</li>
+                </ul>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    IT Strategy & Advisory
+                </h3>
+
+                <p>
+                    Turn technology into a strategic advantage with
+                    clear roadmaps, priorities, and budgets.
+                </p>
+
+                <ul>
+                    <li>IT Roadmaps</li>
+                    <li>Technology Assessments</li>
+                    <li>IT Budget Planning</li>
+                    <li>Fractional IT Leadership</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY NANDERS
+========================================= -->
+
+<section class="section why" id="about">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+
+            <div class="why-image">
+
+                <div class="network-lines"></div>
+
+            </div>
+
+
+            <div>
+
+                <div class="section-label">
+                    WHY NANDERS
+                </div>
+
+                <h2 class="section-title">
+                    Enterprise thinking.
+                    Business-focused IT.
+                </h2>
+
+                <p class="section-description">
+                    Technology shouldn't be something your business
+                    has to constantly worry about. Nanders Consulting
+                    brings structured IT management, strategic thinking,
+                    and practical technical expertise to growing organizations.
+                </p>
+
+
+                <div class="why-list">
+
+
+                    <div class="why-item">
+
+                        <div class="check">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Business-first approach
+                            </h4>
+
+                            <p>
+                                Technology recommendations are tied to
+                                business priorities rather than technology for technology's sake.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-item">
+
+                        <div class="check">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Enterprise-level expertise
+                            </h4>
+
+                            <p>
+                                Bring structured enterprise IT practices
+                                to organizations without large internal IT departments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-item">
+
+                        <div class="check">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                One technology partner
+                            </h4>
+
+                            <p>
+                                Consulting, projects, managed services,
+                                security, and strategy under one relationship.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     APPROACH
+========================================= -->
+
+<section class="section approach" id="approach">
+
+    <div class="container">
+
+        <div class="section-label">
+            OUR APPROACH
+        </div>
+
+        <h2 class="section-title">
+            Assess. Improve. Manage.
+        </h2>
+
+        <p class="section-description">
+            A simple process for turning technology challenges
+            into a clear and manageable IT environment.
+        </p>
+
+
+        <div class="approach-grid">
+
+
+            <div class="approach-card">
+
+                <div class="number">
+                    01 / ASSESS
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    We evaluate your current environment,
+                    identify risks, and understand your business objectives.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card">
+
+                <div class="number">
+                    02 / PLAN
+                </div>
+
+                <h3>
+                    Prioritize
+                </h3>
+
+                <p>
+                    We create a practical roadmap focused on
+                    the projects and improvements that matter most.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card">
+
+                <div class="number">
+                    03 / IMPROVE
+                </div>
+
+                <h3>
+                    Modernize
+                </h3>
+
+                <p>
+                    We implement improvements across infrastructure,
+                    cloud, security, identity, and devices.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card">
+
+                <div class="number">
+                    04 / MANAGE
+                </div>
+
+                <h3>
+                    Optimize
+                </h3>
+
+                <p>
+                    Ongoing management keeps your environment
+                    secure, reliable, documented, and ready to grow.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TECHNOLOGY
+========================================= -->
+
+<section class="section technology">
+
+    <div class="container">
+
+        <div class="section-label">
+            TECHNOLOGY
+        </div>
+
+        <h2 class="section-title">
+            Built around the platforms<br>
+            your business already uses.
+        </h2>
+
+        <p class="section-description">
+            Nanders Consulting specializes in modern Microsoft
+            technology and the infrastructure surrounding it.
+        </p>
+
+
+        <div class="tech-grid">
+
+            <div class="tech">
+                Microsoft 365
+            </div>
+
+            <div class="tech">
+                Microsoft Entra
+            </div>
+
+            <div class="tech">
+                Azure
+            </div>
+
+            <div class="tech">
+                Intune
+            </div>
+
+            <div class="tech">
+                Windows Server
+            </div>
+
+            <div class="tech">
+                Power BI
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta">
+
+    <div class="container cta-inner">
+
+        <div>
+
+            <h2>
+                Let's make your IT<br>
+                work better.
+            </h2>
+
+            <p>
+                Whether you need ongoing IT support,
+                a technology project, or a roadmap for what's next,
+                let's start with a conversation.
+            </p>
+
+        </div>
+
+
+        <a href="#contact" class="btn">
+            Schedule a Consultation →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <div class="section-label">
+                    GET STARTED
+                </div>
+
+                <h2 class="section-title">
+                    Tell us what you're
+                    trying to accomplish.
+                </h2>
+
+                <p>
+                    Have an IT challenge, upcoming project,
+                    or need for ongoing technology support?
+                    Tell us a little about it and we'll be in touch.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+
+                        <strong>
+                            EMAIL
+                        </strong>
+
+                        <span>
+                            info@nandersconsulting.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <strong>
+                            SERVICES
+                        </strong>
+
+                        <span>
+                            Managed IT • Consulting • Projects • Security
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <form class="contact-form" id="contactForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Business Email
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="you@company.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Company
+                    </label>
+
+                    <input
+                        type="text"
+                        name="company"
+                        placeholder="Company name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        How can we help?
+                    </label>
+
+                    <select name="service">
+
+                        <option>
+                            Managed IT Services
+                        </option>
+
+                        <option>
+                            Microsoft 365 / Entra
+                        </option>
+
+                        <option>
+                            Cybersecurity
+                        </option>
+
+                        <option>
+                            Infrastructure
+                        </option>
+
+                        <option>
+                            Technology Project
+                        </option>
+
+                        <option>
+                            IT Strategy / Advisory
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Tell us about your needs
+                    </label>
+
+                    <textarea
+                        name="message"
+                        placeholder="Tell us a little about your environment or project..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary form-submit"
+                >
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="logo footer-logo">
+
+                    <div class="logo-mark">
+                        N
+                    </div>
+
+                    NANDERS CONSULTING
+
+                </div>
+
+                <p class="footer-description">
+                    Enterprise IT expertise for growing businesses.
+                    Managed IT, Microsoft technology, cybersecurity,
+                    infrastructure, and strategic consulting.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Services
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#services">
+                            Managed IT
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Microsoft 365
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Cybersecurity
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Infrastructure
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Company
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#approach">
+                            Our Approach
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Connect
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#contact">
+                            Schedule a Consultation
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@nandersconsulting.com">
+                            Email Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Nanders Consulting. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+    /* Mobile Navigation */
+
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileMenu.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* Close mobile navigation after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* Contact Form */
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for contacting Nanders Consulting. " +
+            "We'll be in touch shortly."
+        );
+
+        contactForm.reset();
+
+    });
+
+</script>
+
+
+</body>
+</html>
